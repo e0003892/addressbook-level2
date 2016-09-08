@@ -16,9 +16,9 @@ public class NameTest {
 	
 	@Test
 	public void isSimilar_true() throws IllegalValueException {
-		assertFalse(name.isSimilar(null)) ;
-		assertTrue(name.isSimilar(new Name("John K SMITH")));
-		assertTrue(name.isSimilar(new Name("John Smith")));
-		assertTrue(name.isSimilar(new Name("Smith, John K")));
+		assertFalse(name.isSimilar_notNull(null)) ;
+		assertTrue(name.isSimilar_caseSensitive(new Name("John K SMITH")));
+		assertTrue(name.isSimilar_subset(new Name("John Smith")));
+		assertTrue(name.isSimilar_differentOrderWithComma(new Name("Smith, John K")));
 	}
 }
