@@ -65,8 +65,17 @@ public class Name {
     	if (other == null) {
     		return false;
     	} else {
-    		return fullName.equalsIgnoreCase(other.toString());
+    		if (fullName.equalsIgnoreCase(other.toString())) {
+    			return true;
+    		} else {
+    			String[] splitOther = other.toString().split(" ");
+    			for (String string : splitOther) {
+    				if (fullName.contains(string)) {
+    					return true;
+    				}
+    			}
+    			return false;
+    		}
     	}
     }
-
 }
